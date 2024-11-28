@@ -4,10 +4,6 @@ import asyncio
 import aiohttp
 import discord
 from discord.ext import tasks, commands
-from keep_alive import keep_alive
-import random
-
-keep_alive()
 
 # Set up your bot with intents (necessary for future Discord features)
 intents = discord.Intents.default()
@@ -154,9 +150,4 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
     # Start the task when the bot is ready
     track_price_changes.start()
-
-# Running the bot with the token from an environment variable
-token = os.getenv("DISCORD_TOKEN")
-if not token:
-    raise ValueError("Bot token not found. Set the DISCORD_TOKEN environment variable.")
-bot.run(token)
+#python D:\fetch\my_bot_v2.py
